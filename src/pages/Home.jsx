@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const App = () => {
+const Home = () => {
   useEffect(() => {
     const handleMouseMove = (e) => {
       const circles = document.querySelectorAll(".hover-circle");
@@ -75,4 +75,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
