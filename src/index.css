@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles for full-screen black background */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: black; /* Black background */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Root container */
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Box sizing adjustment */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Font styling */
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+.prata-regular {
+    font-family: 'Prata', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Link active state */
+a.active hr {
+    display: block;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Responsive styling for active links */
+@media (max-width: 640px) {
+    a.active {
+        background-color: black;
+        color: white;
+    }
+}
