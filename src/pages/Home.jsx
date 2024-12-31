@@ -10,7 +10,7 @@ const Home = () => {
           Math.pow(e.clientX - (rect.left + rect.width / 2), 2) +
             Math.pow(e.clientY - (rect.top + rect.height / 2), 2)
         );
-        if (distance < 200) {
+        if (distance < 100) {
           circle.style.opacity = "1";
           circle.style.transform = "scale(1.5)";
         } else {
@@ -27,11 +27,11 @@ const Home = () => {
   return (
     <div className="relative w-full h-full min-h-screen min-w-screen bg-black overflow-hidden">
       {/* Extra Black Background Layer */}
-      <div className="absolute inset-0 bg-black min-w-screen z-0"></div>
+      <div className="relative inset-0 bg-black min-w-screen z-0"></div>
 
       {/* Glowing Circles */}
-      <div className="absolute inset-0 z-10">
-        {[...Array(50)].map((_, i) => (
+      <div className="absolute inset-0 z-0">
+        {[...Array(500)].map((_, i) => (
           <div
             key={i}
             className="absolute hover-circle w-32 h-32 rounded-full blur-3xl transition-all duration-300"
@@ -48,17 +48,17 @@ const Home = () => {
 
       {/* Wavy Lines */}
       <div className="absolute inset-0 pointer-events-none z-20">
-        {[...Array(100)].map((_, i) => (
+        {[...Array(1000)].map((_, i) => (
           <div
             key={i}
             className="absolute bg-black/10"
             style={{
-              width: "120px",
-              height: "1200px",
-              left: `${(i % 10) * 15}%`,
-              top: `${Math.floor(i / 10) * 20}%`,
+              width: "20px",
+              height: "600px",
+              left: `${(i % 10) * 10}%`,
+              top: `${Math.floor(i / 10) * 10}%`,
               transform: "rotate(45deg)",
-              background: "linear-gradient(transparent, #00000020, transparent)",
+              background: "linear-gradient(transparent,rgba(0, 0, 0, 0.44), transparent)",
             }}
           ></div>
         ))}
